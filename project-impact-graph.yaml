@@ -1,0 +1,8 @@
+globalExcludedGlobs:
+  - common/autoinstallers/**
+projects:
+  '@internal/rig':
+    includedGlobs:
+      - '@internal/rig/**'
+    dependentProjects:
+      - '@internal/rig'

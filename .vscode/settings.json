@@ -3,13 +3,14 @@
 		"*.json": "jsonc"
 	},
 	"search.exclude": {
-		"common/temp": true,
+		"**/temp": true,
 		"**/node_modules/**/*": true,
 		"*/*/lib": true,
 		"*/*/.rush": true,
 		"**/*.api.json": true,
 		"**/*.api.md": true,
-		"**/package-public.d.ts": true
+		"**/*.generated.d.ts": true,
+		"**/*.generated.ts": true
 	},
 	"prettier.prettierPath": "common/autoinstallers/rush-prettier/node_modules/prettier",
 	"prettier.requireConfig": true,

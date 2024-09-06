@@ -30,7 +30,7 @@
 	 */
 	"resolutionMode": "highest",
 	"autoInstallPeers": false,
-	"strictPeerDependencies": true,
+	"strictPeerDependencies": false,
 	// "environmentVariables": {
 	//   "NODE_OPTIONS": {
 	//     "value": "--max-old-space-size=4096",
@@ -55,7 +55,7 @@
 	 *
 	 * The default value is false.
 	 */
-	// "preventManualShrinkwrapChanges": true,
+	"preventManualShrinkwrapChanges": true,
 
 	/**
 	 * When a project uses `workspace:` to depend on another Rush project, PNPM normally installs

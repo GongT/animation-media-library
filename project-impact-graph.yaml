@@ -1,8 +1,56 @@
 globalExcludedGlobs:
   - common/autoinstallers/**
 projects:
-  '@internal/rig':
+  '@backend/bangumi-api':
     includedGlobs:
-      - '@internal/rig/**'
+      - '@backend/bangumi-api/**'
     dependentProjects:
-      - '@internal/rig'
+      - '@backend/bangumi-api'
+  '@backend/config':
+    includedGlobs:
+      - '@backend/config/**'
+    dependentProjects:
+      - '@backend/config'
+  '@backend/database':
+    includedGlobs:
+      - '@backend/database/**'
+    dependentProjects:
+      - '@backend/database'
+      - '@backend/main'
+  '@backend/dmhy-spider':
+    includedGlobs:
+      - '@backend/dmhy-spider/**'
+    dependentProjects:
+      - '@backend/dmhy-spider'
+  '@backend/main':
+    includedGlobs:
+      - '@backend/main/**'
+    dependentProjects:
+      - '@backend/main'
+  '@frontend/entry':
+    includedGlobs:
+      - '@frontend/entry/**'
+    dependentProjects:
+      - '@frontend/entry'
+  '@frontend/request':
+    includedGlobs:
+      - '@frontend/request/**'
+    dependentProjects:
+      - '@frontend/request'
+  '@internal/local-rig':
+    includedGlobs:
+      - '@internal/local-rig/**'
+    dependentProjects:
+      - '@backend/bangumi-api'
+      - '@backend/config'
+      - '@backend/database'
+      - '@backend/dmhy-spider'
+      - '@backend/main'
+      - '@frontend/entry'
+      - '@frontend/request'
+      - '@internal/local-rig'
+  '@shared/protocol':
+    includedGlobs:
+      - '@shared/protocol/**'
+    dependentProjects:
+      - '@shared/protocol'

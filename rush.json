@@ -3,8 +3,8 @@
  * For full documentation, please see https://rushjs.io
  */ {
 	"$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
-	"rushVersion": "5.131.0",
-	"pnpmVersion": "9.7.0",
+	"rushVersion": "5.133.3",
+	"pnpmVersion": "9.9.0",
 	"nodeSupportedVersionRange": ">=20",
 	"suppressNodeLtsWarning": true,
 	"projectFolderMinDepth": 2,
@@ -60,9 +60,41 @@
 	// "allowedProjectTags": [ "tools", "frontend-team", "1.0.0-release" ],
 	"projects": [
 		{
-			"packageName": "@internal/rig",
-			"projectFolder": "@internal/rig",
+			"packageName": "@internal/local-rig",
+			"projectFolder": "@internal/local-rig",
 			"tags": []
+		},
+		{
+			"packageName": "@frontend/entry",
+			"projectFolder": "@frontend/entry"
+		},
+		{
+			"packageName": "@frontend/request",
+			"projectFolder": "@frontend/request"
+		},
+		{
+			"packageName": "@shared/protocol",
+			"projectFolder": "@shared/protocol"
+		},
+		{
+			"packageName": "@backend/bangumi-api",
+			"projectFolder": "@backend/bangumi-api"
+		},
+		{
+			"packageName": "@backend/dmhy-spider",
+			"projectFolder": "@backend/dmhy-spider"
+		},
+		{
+			"packageName": "@backend/config",
+			"projectFolder": "@backend/config"
+		},
+		{
+			"packageName": "@backend/database",
+			"projectFolder": "@backend/database"
+		},
+		{
+			"packageName": "@backend/main",
+			"projectFolder": "@backend/main"
 		}
 	]
 }

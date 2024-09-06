@@ -1,0 +1,23 @@
+{
+	"name": "@internal/local-rig",
+	"version": "1.0.0",
+	"private": true,
+	"description": "",
+	"license": "WTFPL",
+	"scripts": {
+		"_phase:clean": "",
+		"_phase:build": ""
+	},
+	"dependencies": {
+		"@build-script/heft-plugins": "/data/DevelopmentRoot/github.com/gongt/baobao/@build-script/heft-plugins",
+		"@build-script/single-dog-asset": "/data/DevelopmentRoot/github.com/gongt/baobao/@build-script/single-dog-asset",
+		"@microsoft/api-extractor": "^7.47.7",
+		"@rushstack/heft": "^0.67.0",
+		"@rushstack/heft-api-extractor-plugin": "^0.3.47",
+		"@rushstack/heft-typescript-plugin": "^0.5.25",
+		"typescript": "^5.5.4"
+	},
+	"devDependencies": {
+		"@types/node": "^22.5.1"
+	}
+}

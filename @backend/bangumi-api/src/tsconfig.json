@@ -1,0 +1,7 @@
+{
+	"extends": "@internal/local-rig/build/tsconfig.json",
+	"compilerOptions": {
+		"outDir": "../lib",
+		"rootDir": "./"
+	}
+}

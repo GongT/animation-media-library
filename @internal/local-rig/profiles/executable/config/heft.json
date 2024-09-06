@@ -1,0 +1,27 @@
+{
+	"$schema": "https://developer.microsoft.com/json-schemas/heft/v0/heft.schema.json",
+	"extends": "../../../build/heft.json",
+	"phasesByName": {
+		"compile": {
+			"cleanFiles": [{ "sourcePath": "temp/dts" }, { "sourcePath": "temp/tsc" }, { "sourcePath": "lib" }],
+			"tasksByName": {
+				"typescript": {
+					"taskPlugin": {
+						"pluginName": "typescript",
+						"pluginPackage": "@build-script/heft-plugins",
+						"options": {
+							"extension": ".mjs",
+							"compilerOptions": {
+								"outDir": "../lib",
+								"rootDir": "./",
+								"tsBuildInfoFile": "../temp/tsc/buildinfo.json",
+								"declarationDir": "../temp/dts"
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"heftPlugins": []
+}

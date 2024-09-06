@@ -1,0 +1,8 @@
+{
+	"name": "@backend/bangumi-api",
+	"version": "0.0.0",
+	"private": true,
+	"devDependencies": {
+		"@internal/local-rig": "workspace:^"
+	}
+}

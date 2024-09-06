@@ -1,0 +1,51 @@
+{
+	"$schema": "https://developer.microsoft.com/json-schemas/heft/v0/heft.schema.json",
+	"phasesByName": {
+		"pre-compile": {
+			"cleanFiles": [{ "sourcePath": "src", "includeGlobs": ["**/*.generated.ts"] }],
+			"tasksByName": {
+				"codegen": {
+					"taskPlugin": {
+						"pluginName": "codegen",
+						"pluginPackage": "@build-script/heft-plugins",
+						"options": {
+							"project": "src/tsconfig.json"
+						}
+					}
+				}
+			}
+		},
+		"compile": {
+			"phaseDependencies": ["pre-compile"]
+		},
+		"post-compile": {
+			"phaseDependencies": ["compile"],
+			"tasksByName": {}
+		},
+		"build": {
+			"phaseDependencies": ["post-compile"],
+			// "phaseDescription": "run build process",
+			"cleanFiles": [
+				{ "sourcePath": ".", "fileExtensions": [".tgz", ".log"], "excludeGlobs": ["node_modules"] },
+				{ "sourcePath": ".", "includeGlobs": ["*-logs"], "excludeGlobs": ["node_modules"] }
+			],
+			"tasksByName": {}
+		},
+		"test": {
+			"phaseDependencies": ["build"],
+			"tasksByName": {
+				// "lint": {
+				// 	"taskPlugin": {
+				// 		"pluginPackage": "@rushstack/heft-lint-plugin"
+				// 	}
+				// },
+				// "jest": {
+				// 	"taskPlugin": {
+				// 		"pluginPackage": "@rushstack/heft-jest-plugin"
+				// 	}
+				// }
+			}
+		}
+	},
+	"heftPlugins": []
+}

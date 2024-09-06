@@ -10,12 +10,14 @@
 						"pluginName": "typescript",
 						"pluginPackage": "@build-script/heft-plugins",
 						"options": {
-							"extension": ".mjs",
+							"extension": ".js",
 							"compilerOptions": {
 								"outDir": "../lib",
 								"rootDir": "./",
 								"tsBuildInfoFile": "../temp/tsc/buildinfo.json",
-								"declarationDir": "../temp/dts"
+								"composite": false,
+								"declarationMap": null,
+								"declaration": false
 							}
 						}
 					}

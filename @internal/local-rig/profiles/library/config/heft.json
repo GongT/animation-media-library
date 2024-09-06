@@ -24,12 +24,13 @@
 						"pluginName": "typescript",
 						"pluginPackage": "@build-script/heft-plugins",
 						"options": {
-							"extension": ".mjs",
+							"extension": ".js",
 							"compilerOptions": {
 								"rootDir": "./",
 								"types": ["node"],
-								"tsBuildInfoFile": "../temp/tsc/buildinfo.json",
-								"declarationDir": "../temp/dts"
+								// "tsBuildInfoFile": "../temp/tsc/buildinfo.json",
+								"tsBuildInfoFile": "../lib/buildinfo.json"
+								// "declarationDir": "../temp/dts"
 							}
 						}
 					}
@@ -37,13 +38,13 @@
 			}
 		},
 		"post-compile": {
-			"tasksByName": {
-				"api-extractor": {
-					"taskPlugin": {
-						"pluginPackage": "@rushstack/heft-api-extractor-plugin"
-					}
-				}
-			}
+			// "tasksByName": {
+			// "api-extractor": {
+			// 	"taskPlugin": {
+			// 		"pluginPackage": "@rushstack/heft-api-extractor-plugin"
+			// 	}
+			// }
+			// }
 		}
 	},
 	"heftPlugins": []

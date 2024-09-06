@@ -12,9 +12,9 @@
 		"**/*.generated.d.ts": true,
 		"**/*.generated.ts": true
 	},
-	"prettier.prettierPath": "common/autoinstallers/rush-prettier/node_modules/prettier",
+	"prettier.prettierPath": "common/temp/node_modules/prettier",
 	"prettier.requireConfig": true,
-	"typescript.tsdk": "./common/temp/node_modules/.pnpm/node_modules/typescript/lib",
+	"typescript.tsdk": "common/temp/node_modules/typescript/lib",
 	"[json]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},

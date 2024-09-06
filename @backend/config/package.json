@@ -2,7 +2,18 @@
 	"name": "@backend/config",
 	"version": "0.0.0",
 	"private": true,
+	"type": "module",
+	"exports": "./lib/__create_index.generated.js",
+	"scripts": {
+		"_phase:clean": "heft --unmanaged clean",
+		"_phase:build": "heft --unmanaged build"
+	},
+	"dependencies": {
+		"@idlebox/common": "^1.3.32"
+	},
 	"devDependencies": {
-		"@internal/local-rig": "workspace:^"
+		"@types/node": "^22.5.1",
+		"@internal/local-rig": "workspace:^",
+		"@rushstack/heft": "^0.67.0"
 	}
 }

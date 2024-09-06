@@ -11,6 +11,8 @@ projects:
       - '@backend/config/**'
     dependentProjects:
       - '@backend/config'
+      - '@backend/database'
+      - '@backend/main'
   '@backend/database':
     includedGlobs:
       - '@backend/database/**'

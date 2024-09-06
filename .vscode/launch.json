@@ -6,9 +6,18 @@
 	"configurations": [
 		{
 			"type": "node",
-			"request": "attach",
-			"name": "Debugger",
-			"skipFiles": ["<node_internals>/**"]
+			"request": "launch",
+			"name": "启动服务",
+			"skipFiles": ["<node_internals>/**"],
+			"internalConsoleOptions": "neverOpen",
+			"envFile": "${workspaceFolder}/.env",
+			"outputCapture": "std",
+			"localRoot": "${workspaceFolder}",
+			"program": "${workspaceFolder}/@backend/main/loader.js",
+			"sourceMaps": true,
+			"env": {
+				"workspaceFolder": "${workspaceFolder}"
+			}
 		}
 	]
 }

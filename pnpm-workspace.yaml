@@ -1,0 +1,39 @@
+packages:
+  - '@backend/*'
+  - '@drivers/*'
+  - '@frontend/*'
+  - '@packages/*'
+  - 'internal/*'
+  # - '@client/*'
+
+onlyBuiltDependencies:
+  - 'esbuild'
+  - '@biomejs/biome'
+
+ignoredOptionalDependencies:
+  - fsevents
+
+hoist: false
+hoistWorkspacePackages: false
+publicHoistPattern:
+  - '@types/*'
+  - 'typescript'
+  - '@biomejs/biome'
+hoistPattern:
+  - ""
+
+nodeOptions: ''
+enablePrePostScripts: true
+
+autoInstallPeers: false
+strictPeerDependencies: false
+
+saveWorkspaceProtocol: rolling
+savePrefix: '^'
+ignoreWorkspaceCycles: true
+
+#####
+overrides:
+  # '@build-script/node-package-tools': '/data/DevelopmentRoot/github.com/gongt/baobao/@build-script/node-package-tools'
+  '@mpis/run': '/data/DevelopmentRoot/github.com/gongt/baobao/@mpis/run'
+  '@mpis/publisher': '/data/DevelopmentRoot/github.com/gongt/baobao/@mpis/publisher'

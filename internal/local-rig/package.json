@@ -1,0 +1,11 @@
+{
+	"name": "@internal/local-rig",
+	"version": "0.0.0",
+	"private": true,
+	"dependencies": {
+		"@build-script/codegen": "^1.0.3",
+		"@build-script/single-dog-asset": "^1.0.32",
+		"@mpis/typescript": "^0.0.5",
+		"typescript": "^5.8.3"
+	}
+}

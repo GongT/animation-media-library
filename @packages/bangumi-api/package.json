@@ -1,0 +1,40 @@
+{
+	"name": "bgmtv-api",
+	"version": "0.0.1",
+	"type": "module",
+	"description": "Bangumi OpenAPI Client",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/gongt/animation-media-library"
+	},
+	"exports": {
+		".": {
+			"source": "./src/index.ts",
+			"default": "./lib/index.js"
+		},
+		"./package.json": "./package.json"
+	},
+	"scripts": {
+		"prepack": "mpis-run build --clean",
+		"build": "mpis-run build",
+		"watch": "mpis-run watch",
+		"prepublishHook": "pre-publish"
+	},
+	"devDependencies": {
+		"@build-script/codegen": "^1.0.3",
+		"@build-script/single-dog-asset": "^1.0.32",
+		"@idlebox/common": "^1.4.15",
+		"@internal/local-rig": "workspace:",
+		"@internal/scripts": "workspace:",
+		"@mpis/publisher": "^0.0.2",
+		"@mpis/run": "^0.0.3",
+		"@types/node": "^24.0.14",
+		"execa": "^9.6.0",
+		"openapi-typescript": "^7.8.0",
+		"typescript": "^5.8.3"
+	},
+	"dependencies": {
+		"openapi-fetch": "^0.14.0"
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"name": "@shared/protocol",
+	"version": "0.0.0",
+	"private": true,
+	"devDependencies": {
+		"@build-script/single-dog-asset": "^1.0.32",
+		"typescript": "^5.8.3"
+	}
+}

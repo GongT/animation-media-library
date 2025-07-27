@@ -1,0 +1,18 @@
+{
+	"extends": "@build-script/single-dog-asset/package/tsconfig.json",
+	"compilerOptions": {
+		"outDir": "./lib",
+		"rootDir": "./src"
+	},
+	"exclude": ["**/*.generator.ts"],
+	"references": [
+		{
+			"$id": "node-package-tools/monorepo-tsconfig",
+			"path": "../config/tsconfig.json"
+		},
+		{
+			"$id": "node-package-tools/monorepo-tsconfig",
+			"path": "../database/src/tsconfig.json"
+		}
+	]
+}

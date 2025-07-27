@@ -1,62 +1,41 @@
-### Hidden Files
+### 隐藏文件
 .*
-!/.*
 
-### Git
-!*.gitignore
+### 有用的隐藏文件
+!.git*
+!.npm*
+!.vscode
+!.github
 
-### Cache File
-common/temp
-common/deploy
-*.tsbuildinfo
-.rpt2_cache/
+### 缓存
 
-### Temp Files
+### 临时文件
 *.lock
-.lock
 temp/
 *.bak
-/.vscode/local-history
 
-### Build Result
+### IDEs
+.vscode/local-history
+
+### 构建产物
 dist/
 lib/
 *.tgz
-.test
-build-*/
-tsdoc-metadata.json
+tsconfig.everything.json
+*.generated.*
+_*.ts
 
 ### Package Manager
 node_modules
-jspm_packages
-bower_components
-package-deps.json
-/package.json
-!common/config/rush/.npmrc
-!.npmignore
 
-### Log Files
-*-logs
+### 日志
 *.log
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 
-### Monorepo Local Files
-**/.editorconfig
-**/.git*
-**/.prettier*
-**/pnpm-lock.yaml
-**/yarn.lock
-
-!common/config/rush/pnpm-lock.yaml
-
-### Generated Files
-*.generated.*
-c_cpp_properties.json
-vcpkg_installed
-_*.ts
-
-### ?
+### 异常输出产物
 src/**/*.js
 src/**/*.map
+src/**/*.d.ts
+
+### 环境变量
+!.env.sample

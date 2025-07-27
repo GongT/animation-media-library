@@ -1,36 +1,24 @@
 {
 	"files.associations": {
-		"*.json": "jsonc"
+		"*.json": "jsonc",
 	},
 	"search.exclude": {
 		"**/temp": true,
-		"**/node_modules/**/*": true,
-		"*/*/lib": true,
-		"*/*/.rush": true,
-		"**/*.api.json": true,
-		"**/*.api.md": true,
-		"**/*.generated.d.ts": true,
-		"**/*.generated.ts": true
+		"**/node_modules": true,
+		"**/lib": true,
+		"**/dist": true,
+		"pnpm-lock.yaml": true,
+		"**/*.generated.ts": true,
 	},
-	"prettier.prettierPath": "common/temp/node_modules/prettier",
-	"prettier.requireConfig": true,
-	"typescript.tsdk": "common/temp/node_modules/typescript/lib",
-	"[json]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	"typescript.tsdk": "./node_modules/typescript/lib",
+	"biome.lsp.bin": "./node_modules/@biomejs/biome/bin/biome",
+	"[json][json5][jsonc][javascript][typescript][typescriptreact]": {
+		"editor.defaultFormatter": "biomejs.biome",
 	},
-	"[json5]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[jsonc]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[jacascript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[typescript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[typescriptreact]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	}
+	"inlineSQL.enableDBIntegration": true,
+	"inlineSQL.dbDriver": "mysql",
+	"inlineSQL.dbHost": "/run/sockets/mariadb.sock",
+	// "inlineSQL.dbPort": 5432,
+	"inlineSQL.dbUser": "root",
+	"inlineSQL.dbPassword": "#0624UFO",
 }

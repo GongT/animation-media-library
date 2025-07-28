@@ -1,6 +1,6 @@
 {
 	"name": "bgmtv-api",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"type": "module",
 	"description": "Bangumi OpenAPI Client",
 	"license": "MIT",
@@ -19,17 +19,21 @@
 		"prepack": "mpis-run build --clean",
 		"build": "mpis-run build",
 		"watch": "mpis-run watch",
-		"prepublishHook": "pre-publish"
+		"prepublishHook": "pre-publish",
+		"prepublishOnly": "echo 应使用 publisher publish ; echo ; false"
+	},
+	"publishConfig": {
+		"packCommand": ["publisher", "pack"]
 	},
 	"devDependencies": {
-		"@build-script/codegen": "^1.0.3",
-		"@build-script/single-dog-asset": "^1.0.32",
-		"@idlebox/common": "^1.4.15",
+		"@build-script/codegen": "^1.0.4",
+		"@build-script/single-dog-asset": "^1.0.37",
+		"@idlebox/common": "^1.4.16",
 		"@internal/local-rig": "workspace:",
 		"@internal/scripts": "workspace:",
-		"@mpis/publisher": "^0.0.2",
-		"@mpis/run": "^0.0.3",
-		"@types/node": "^24.0.14",
+		"@mpis/publisher": "^0.0.3",
+		"@mpis/run": "^0.0.4",
+		"@types/node": "^24.1.0",
 		"execa": "^9.6.0",
 		"openapi-typescript": "^7.8.0",
 		"typescript": "^5.8.3"

@@ -3,7 +3,7 @@
 	"version": "0.0.0",
 	"private": true,
 	"devDependencies": {
-		"@build-script/single-dog-asset": "^1.0.32",
+		"@build-script/single-dog-asset": "^1.0.37",
 		"typescript": "^5.8.3"
 	}
 }

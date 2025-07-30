@@ -17,23 +17,27 @@ export async function generate(builder: GenerateContext) {
 	const files = project.getSourceFiles();
 
 	builder.watchFiles(
-		resolve(__dirname, 'schemas/**'),
-		resolve(__dirname, 'migrations/**'),
-		resolve(__dirname, 'subscribers/**')
+		resolve(__dirname, 'schemas'),
+		resolve(__dirname, 'migrations'),
+		resolve(__dirname, 'subscribers*')
 	);
 
 	await generateEntities(
-		files.filter(source_filter('schemas')),
+		files.filter(source_filter(builder, 'schemas')),
 		builder.file('./g/schemas.ts'),
 		builder.file('./g/public.ts')
 	);
-	await generateMigrations(files.filter(source_filter('migrations')), builder.file('./g/migrations.ts'));
-	await generateSubscribers(files.filter(source_filter('subscribers')), builder.file('./g/subscribers.ts'));
+	await generateMigrations(files.filter(source_filter(builder, 'migrations')), builder.file('./g/migrations.ts'));
+	await generateSubscribers(files.filter(source_filter(builder, 'subscribers')), builder.file('./g/subscribers.ts'));
 }
 
-function source_filter(dirname: string) {
+function source_filter(builder: GenerateContext, dirname: string) {
 	return (file: SourceFile) => {
-		return file.getFilePath().includes(`${__dirname}/${dirname}/`);
+		const matched = file.getFilePath().includes(`${__dirname}/${dirname}/`);
+
+		if (matched) builder.watchFiles(file.getFilePath());
+
+		return matched;
 	};
 }
 

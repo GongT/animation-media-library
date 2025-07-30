@@ -16,6 +16,8 @@ function interop(exports: any) {
 	return exports.default ?? exports;
 }
 
+let native_warned = false;
+
 async function options(): Promise<PostgresConnectionOptions> {
 	const ret: DeepWriteable<PostgresConnectionOptions> = {
 		type: 'postgres',
@@ -34,11 +36,9 @@ async function options(): Promise<PostgresConnectionOptions> {
 
 	if (typeof appConfig.database.server === 'string') {
 		ret.host = appConfig.database.server;
-		logger.debug(' - server: unix:%s', ret.host);
 	} else {
 		ret.host = appConfig.database.server.host;
 		ret.port = appConfig.database.server.port;
-		logger.debug(' - server: %s:%s', ret.host, ret.port);
 	}
 
 	// @ts-expect-error
@@ -50,7 +50,10 @@ async function options(): Promise<PostgresConnectionOptions> {
 		const native: any = await import('pg-native');
 		ret.nativeDriver = interop(native);
 	} catch (_e) {
-		logger.warn('包pg-native无法导入');
+		if (!native_warned) {
+			logger.warn('包pg-native无法导入');
+			native_warned = true;
+		}
 	}
 
 	// TODO: production environment
@@ -64,64 +67,75 @@ async function options(): Promise<PostgresConnectionOptions> {
 	return ret;
 }
 
-export async function cleanRecreateDatabase() {
+/**
+ * @deprecated
+ */
+export async function debugDeleteDatabase() {
 	const opts = await options();
 
 	await dropDatabase({ ifExist: true, options: opts });
-
-	// await createDatabaseIfNotExists();
 }
 
-export async function createDatabaseIfNotExists() {
+export async function createDatabaseAndSync() {
 	const opts = await options();
 
-	await createDatabase({ ifNotExist: true, options: opts });
+	await createDatabase({ ifNotExist: false, options: opts });
 
+	if (!typeorm_data_source) {
+		const opts = await options();
+		await connect(opts);
+	}
 	await typeorm_data_source.synchronize();
-	logger.debug('database schemas synchronized');
+	logger.success('✅ 数据库成功创建并初始化');
 }
 
 export async function startupDatabaseConnection() {
-	await cleanRecreateDatabase();
+	logger.log('⏩ 正在连接数据库');
 
 	const opts = await options();
-	await connect(opts);
 
 	try {
-		await migration();
+		await connect(opts);
+
+		logger.success('✅ 数据库存在，无需初始化');
 	} catch (e: any) {
 		if (isDataBaseNotExists(e)) {
 			logger.warn('数据库不存在，尝试创建数据库');
-			await createDatabaseIfNotExists();
-			await migration();
-			return;
+			await createDatabaseAndSync();
+		} else {
+			throw e;
 		}
-		throw e;
 	}
+
+	await migration();
 }
 
 async function connect(options: PostgresConnectionOptions) {
+	if (typeorm_data_source) throw new Error('数据库连接已存在');
+
 	try {
-		logger.log('database connecting...');
+		logger.debug('connecting...');
 
 		const AppDataSource = new DataSource(options);
 
 		await AppDataSource.initialize();
-		logger.debug('database connected');
+		logger.success('✅ 数据库连接已建立');
 
 		typeorm_data_source = AppDataSource;
 	} catch (e: any) {
+		console.error(e.stack);
+
 		throw new Error(`failed connect database: ${e.message}`);
 	}
 }
 
 async function migration() {
 	try {
-		logger.log('database migrations...');
+		logger.log('⏩ 运行数据库迁移');
 
-		await typeorm_data_source.runMigrations({ transaction: 'all' });
+		const r = await typeorm_data_source.runMigrations({ transaction: 'all' });
 
-		logger.debug('migrations executed');
+		logger.success`✅ 迁移结束 (${r.length})`;
 	} catch (e: any) {
 		throw new Error(`failed to migrate database: ${e.message}`);
 	}
@@ -135,7 +149,7 @@ registerGlobalLifecycle({
 	async dispose() {
 		if (!typeorm_data_source) return;
 
-		console.log('database disconnecting...');
+		console.log('⏩ 断开数据库连接');
 		const c = typeorm_data_source;
 		// @ts-expect-error
 		typeorm_data_source = undefined;

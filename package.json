@@ -1,0 +1,11 @@
+{
+	"scripts": {
+		"watch": "build-manager watch",
+		"build": "build-manager build",
+		"pretty": "node internal/scripts/bins/load.js pretty --unsafe"
+	},
+	"dependencies": {
+		"@biomejs/biome": "^2.1.2",
+		"typescript": "^5.8.3"
+	}
+}

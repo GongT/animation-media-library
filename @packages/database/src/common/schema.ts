@@ -1,6 +1,13 @@
-import { timestamp } from 'drizzle-orm/mysql-core';
+import "reflect-metadata";
+import { BaseEntity, Column, PrimaryGeneratedColumn } from "typeorm";
 
-export const datetimeFields = {
-	createdAt: timestamp('created_at').notNull().defaultNow(),
-	updatedAt: timestamp('updated_at').notNull().onUpdateNow().defaultNow(),
-};
+export abstract class CommonEntity extends BaseEntity {
+	@PrimaryGeneratedColumn({ type: "bigint" })
+	declare id: bigint;
+
+	@Column({ type: "timestamp without time zone", update: false })
+	declare createdAt: Date;
+
+	@Column({ type: "timestamp without time zone" })
+	declare updatedAt: Date;
+}

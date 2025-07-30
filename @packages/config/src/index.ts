@@ -1,7 +1,10 @@
-import type { DeepReadonly } from '@idlebox/common';
+import type { DeepReadonly } from "@idlebox/common";
+import { logger } from "@idlebox/logger";
+
+type UnixSocket = string;
 
 export type ILocation =
-	| string
+	| UnixSocket
 	| {
 			host: string;
 			port: number;
@@ -28,17 +31,18 @@ export interface IAppConfig {
  * 只在main()开始时调用一次
  */
 export async function loadApplicationConfig() {
+	logger.log("loading configuration...");
 	config.http = {
 		listen: {
-			host: '0.0.0.0',
+			host: "0.0.0.0",
 			port: 6666,
 		},
 	};
 	config.database = {
-		server: '/run/sockets/mariadb.sock',
-		dbname: 'animation-media-library',
-		user: 'aml-user',
-		pass: 'aml-pass',
+		server: "/run/sockets/mariadb.sock",
+		dbname: "animation-media-library",
+		user: "aml-user",
+		pass: "aml-pass",
 	};
 }
 const config: IAppConfig = {} as any;

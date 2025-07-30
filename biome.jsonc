@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.1.2/schema.json",
 	"vcs": {
 		"enabled": true,
 		"clientKind": "git",
@@ -7,8 +7,18 @@
 	},
 	"files": {
 		"ignoreUnknown": true,
-		"ignore": ["dist", "lib", "node_modules"],
-		"include": ["*.ts", "*.tsx", "*.js", "*.json", "*.jsonc"],
+	},
+	"assist": {
+		"enabled": true,
+		"actions": {
+			"recommended": true,
+			"source": {
+				"organizeImports": "off",
+				"useSortedKeys": "off",
+				"useSortedProperties": "off",
+				"useSortedAttributes": "on",
+			},
+		},
 	},
 	"formatter": {
 		"enabled": true,
@@ -26,11 +36,9 @@
 				"noControlCharactersInRegex": "off",
 			},
 			"style": {
-				"noArguments": "off",
 				"noParameterAssign": "off",
 				"noNonNullAssertion": "warn",
 				"useShorthandFunctionType": "off",
-				"useShorthandArrayType": "off",
 				"noUselessElse": "off",
 				"noUnusedTemplateLiteral": "off",
 				"noDefaultExport": "error",
@@ -42,29 +50,16 @@
 				"useImportExtensions": {
 					"fix": "unsafe",
 					"level": "error",
-					"options": {
-						"suggestedExtensions": {
-							"ts": {
-								"module": "js",
-								"component": "js",
-							},
-						},
-					},
+					"options": {},
 				},
 			},
-			"nursery": {
-				"noSubstr": "info",
-				"useAtIndex": "info",
-			},
+			"nursery": "info",
 			"performance": {
 				"useTopLevelRegex": "info",
 				"noDelete": "info",
 			},
 			"security": {},
 		},
-	},
-	"organizeImports": {
-		"enabled": false,
 	},
 	"javascript": {
 		"formatter": {
@@ -91,7 +86,7 @@
 	},
 	"overrides": [
 		{
-			"include": ["tsconfig.json", "tsconfig.*.json", ".vscode/*.json", "*.jsonc"],
+			"includes": ["tsconfig.json", "tsconfig.*.json", ".vscode/*.json", "*.jsonc"],
 			"json": {
 				"formatter": {
 					"trailingCommas": "all",

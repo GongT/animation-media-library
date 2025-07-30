@@ -3,8 +3,9 @@
 	"compilerOptions": {
 		"outDir": "../lib",
 		"rootDir": "./",
-		"tsBuildInfoFile": "../lib/.tsbuildinfo",
+		"tsBuildInfoFile": "../lib/tsbuildinfo.json",
+		"types": ["node"],
 		"typeRoots": ["../node_modules/@types", "../node_modules"],
-		"types": ["node"]
 	},
+	"exclude": ["**/*.generator.ts"]
 }

@@ -3,18 +3,27 @@
 	"version": "0.0.0",
 	"private": true,
 	"type": "module",
-	"bin": "./loader.js",
-	"scripts": {},
+	"bin": "./bin/daemon.js",
+	"scripts": {
+		"prepack": "mpis-run build --clean",
+		"build": "mpis-run build",
+		"watch": "mpis-run watch"
+	},
 	"dependencies": {
 		"@backend/config": "workspace:^",
 		"@backend/database": "workspace:^",
+		"@backend/execute": "workspace:^",
+		"@idlebox/args": "^0.0.11",
 		"@idlebox/common": "^1.4.16",
+		"@idlebox/logger": "^0.0.4",
 		"@idlebox/node": "^1.4.9",
-		"@types/node": "^24.1.0",
-		"source-map-support": "^0.5.21"
+		"@types/node": "^24.1.0"
 	},
 	"devDependencies": {
 		"@build-script/single-dog-asset": "^1.0.37",
+		"@internal/local-rig": "workspace:",
+		"@internal/scripts": "workspace:",
+		"@mpis/run": "^0.0.4",
 		"typescript": "^5.8.3"
 	}
 }

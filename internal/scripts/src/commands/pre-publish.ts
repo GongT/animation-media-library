@@ -36,6 +36,12 @@ cpSync(resolve(projectRoot, "LICENSE"), "LICENSE");
 const pkgJson = await loadJsonFile("package.json");
 delete pkgJson.publishConfig;
 
+pkgJson.license = "MIT";
+pkgJson.repository = {
+	type: "git",
+	url: "https://github.com/gongt/animation-media-library",
+};
+
 for (const [name, version] of Object.entries(pkgJson.devDependencies ?? {})) {
 	if (name.startsWith("@internal/") || version === "") {
 		delete pkgJson.devDependencies[name];

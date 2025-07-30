@@ -1,4 +1,4 @@
-import { FileBuilder, GenerateContext } from '@build-script/codegen';
+import type { FileBuilder, GenerateContext } from '@build-script/codegen';
 import { objectPath } from '@idlebox/common';
 import { execa } from 'execa';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';

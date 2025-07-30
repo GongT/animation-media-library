@@ -21,4 +21,7 @@
 	// "inlineSQL.dbPort": 5432,
 	"inlineSQL.dbUser": "root",
 	"inlineSQL.dbPassword": "#0624UFO",
+	"cSpell.words": [
+		"bgmtv"
+	],
 }

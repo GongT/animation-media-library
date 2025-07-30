@@ -1,36 +1,36 @@
-import { Column, Entity, Index } from "typeorm";
-import { CommonEntity } from "../common/schema.js";
+import { Column, Entity, Index } from 'typeorm';
+import { CommonEntity } from '../common/schema.js';
 
 export enum WatchState {
-	NotCollect = "未收藏",
-	Watch = "在看",
-	Wish = "想看",
-	Complete = "看过",
-	Hold = "搁置",
-	Drop = "抛弃",
+	NotCollect = '未收藏',
+	Watch = '在看',
+	Wish = '想看',
+	Complete = '看过',
+	Hold = '搁置',
+	Drop = '抛弃',
 }
 
-@Entity({ comment: "动画" })
+@Entity({ comment: '动画', name: 'animations' })
 export class AnimationEntity extends CommonEntity {
-	@Index({ unique: true, spatial: true })
-	@Column("int")
+	@Index({ unique: true })
+	@Column('int')
 	declare bgmSubjectId: number;
 
-	@Column("text")
+	@Column('text')
 	declare title: string;
 
-	@Column("text")
+	@Column('text')
 	declare coverUrl: string;
 
-	@Column({ type: "date" })
+	@Column({ type: 'date' })
 	declare onAirFrom: Date;
 
-	@Column({ type: "date" })
+	@Column({ type: 'date' })
 	declare onAirTo: Date;
 
-	@Column({ type: "enum", enum: WatchState, default: WatchState.NotCollect })
+	@Column({ type: 'enum', enum: WatchState })
 	declare watchState: WatchState;
 
-	@Column("int")
+	@Column('int')
 	declare episodeCount: number;
 }

@@ -3,38 +3,35 @@ packages:
   - '@drivers/*'
   - '@frontend/*'
   - '@packages/*'
-  - 'internal/*'
-  # - '@client/*'
+  - internal/*
+  - patches/*
 
+nodeOptions: ''
+enablePrePostScripts: true
 onlyBuiltDependencies:
-  - 'esbuild'
   - '@biomejs/biome'
+  - esbuild
 
 ignoredOptionalDependencies:
   - fsevents
 
 hoist: false
+hoistPattern:
+  - ''
 hoistWorkspacePackages: false
 publicHoistPattern:
   - '@types/*'
-hoistPattern:
-  - ""
 
-nodeOptions: ''
-enablePrePostScripts: true
+ignoreWorkspaceCycles: true
+savePrefix: ^
+saveWorkspaceProtocol: rolling
 
 autoInstallPeers: false
 strictPeerDependencies: false
 
-saveWorkspaceProtocol: rolling
-savePrefix: '^'
-ignoreWorkspaceCycles: true
-
-#####
 overrides:
-  # '@build-script/node-package-tools': '/data/DevelopmentRoot/github.com/gongt/baobao/@build-script/node-package-tools'
-  '@mpis/run': '/data/DevelopmentRoot/github.com/gongt/baobao/@mpis/run'
-  '@mpis/publisher': '/data/DevelopmentRoot/github.com/gongt/baobao/@mpis/publisher'
-  '@build-script/codegen': '/data/DevelopmentRoot/github.com/gongt/baobao/@build-script/codegen'
-  '@build-script/package-tools': '/data/DevelopmentRoot/github.com/gongt/baobao/@build-script/package-tools'
-  '@mpis/monorepo': '/data/DevelopmentRoot/github.com/gongt/baobao/@mpis/monorepo'
+  '@mpis/run': /data/DevelopmentRoot/github.com/gongt/baobao/@mpis/run
+  '@mpis/publisher': /data/DevelopmentRoot/github.com/gongt/baobao/@mpis/publisher
+  '@build-script/codegen': /data/DevelopmentRoot/github.com/gongt/baobao/@build-script/codegen
+  '@build-script/package-tools': /data/DevelopmentRoot/github.com/gongt/baobao/@build-script/package-tools
+  '@mpis/monorepo': /data/DevelopmentRoot/github.com/gongt/baobao/@mpis/monorepo

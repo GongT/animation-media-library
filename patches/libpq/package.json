@@ -1,0 +1,17 @@
+{
+	"name": "libpq-patched",
+	"type": "module",
+	"version": "1.0.0",
+	"exports": "./index.js",
+	"scripts": {
+		"build": "",
+		"watch": "",
+		"postinstall": "./install.js"
+	},
+	"dependencies": {
+		"libpq": "npm:libpq@latest"
+	},
+	"devDependencies": {
+		"@idlebox/node": "^1.4.9"
+	}
+}

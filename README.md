@@ -31,11 +31,4 @@
 
 # Contribution
 
-本项目分为以下几个部分：
-
-1. **支持包** 位于 `@packages`、`@drivers` 目录，包含通用功能，如连接数据库、bangumi客户端等。
-2. **用户界面** 位于 `@frontend` 目录
-   1. 前端 `@frontend/website`，是一个简单的web控制界面。
-   2. 服务端 `@backend/api`，为website提供各种功能。
-3. **主要API服务** 位于 `@backend` 目录
-   1. `@backend/service` 长期运行的服务，主程序入口
+See [CONTRIBUTE.md]

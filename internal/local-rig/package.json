@@ -7,11 +7,13 @@
 		"watch": ""
 	},
 	"dependencies": {
-		"@build-script/codegen": "^1.0.4",
 		"@build-script/single-dog-asset": "^1.0.37",
 		"@mpis/monorepo": "^0.0.3",
 		"@mpis/run": "link:/data/DevelopmentRoot/github.com/gongt/baobao/@mpis/run",
 		"@mpis/typescript": "^0.0.6",
 		"typescript": "^5.8.3"
+	},
+	"devDependencies": {
+		"@build-script/codegen": "^1.0.4"
 	}
 }

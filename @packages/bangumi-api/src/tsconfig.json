@@ -5,6 +5,6 @@
 		"rootDir": "./",
 		"types": ["node"],
 		"typeRoots": ["../node_modules/@types", "../node_modules"],
-		"tsBuildInfoFile": "../lib/.tsbuildinfo",
-	},
+		"tsBuildInfoFile": "../lib/.tsbuildinfo"
+	}
 }

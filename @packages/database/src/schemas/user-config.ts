@@ -1,20 +1,11 @@
-import { Column, Entity } from "typeorm";
-import { CommonEntity } from "../common/schema.js";
+import { Column, Entity } from 'typeorm';
+import { CommonEntity } from '../common/schema.js';
 
-export enum FieldType {
-	String = "string",
-	Number = "number",
-	Boolean = "boolean",
-}
-
-@Entity({ comment: "系统设置" })
+@Entity({ comment: '系统设置', name: 'user_settings' })
 export class UserConfigEntity extends CommonEntity {
-	@Column({ type: "enum", enum: FieldType })
-	declare type: FieldType;
-
-	@Column("varchar", { length: 64, nullable: false })
+	@Column('varchar', { length: 64, nullable: false })
 	declare key: string;
 
-	@Column("text")
+	@Column('text')
 	declare valueRaw: string;
 }

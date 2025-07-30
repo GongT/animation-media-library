@@ -6,6 +6,12 @@
 !.npm*
 !.vscode
 !.github
+!.pnpmfile.cjs
+
+### 开发环境数据和配置
+!.development
+.development/*
+!.development/adminer
 
 ### 缓存
 

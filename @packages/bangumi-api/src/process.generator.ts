@@ -8,6 +8,9 @@ const optional_field = /(\S+)\?:/g;
 const never_field = /^\s*\S+\?: never;$/gm;
 const empty_object = /^\s*\S+:\s*{[\s\n\r]*}[;,]?$/gm;
 const multiple_newline = /\n{2,}/g;
+const prefixMdTitleChar = /^#+/;
+
+const patchVariable1 = /UserSubjectCollectionModifyPayload: {[\s\S]+?}/;
 
 const tempDir = resolve(import.meta.dirname, '../temp');
 const openApiFile = resolve(tempDir, 'dist.json');
@@ -33,7 +36,7 @@ function makeLowLevelApiFile(output: FileBuilder) {
 	content = content.replace(empty_object, '\n');
 
 	// UserSubjectCollectionModifyPayload 所有字段改为可选
-	content = content.replace(/UserSubjectCollectionModifyPayload: {[\s\S]+?}/, (e) => {
+	content = content.replace(patchVariable1, (e) => {
 		return e.replace(/(\s+\S+): /g, '$1?: ');
 	});
 
@@ -126,7 +129,7 @@ function makeMethod(output: FileBuilder, method: string, operation: any, data: O
 	const paramsRecreated = params
 		.map((param) => {
 			if (param.in !== 'path') {
-				return;
+				return '';
 			}
 			output.append(`\t\t${param.name}: operations['${operationId}']['parameters']['path']['${param.name}'],`);
 			return param.name;
@@ -235,5 +238,5 @@ function get_ref(data: OpenApi, ref: string) {
 
 function firstLine(text: string) {
 	const first = text.split('\n', 1)[0].trim();
-	return first.replace(/^#+/, '').trim();
+	return first.replace(prefixMdTitleChar, '').trim();
 }

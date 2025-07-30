@@ -1,3 +1,3 @@
-import { runForever } from "@backend/execute";
+import { runForever } from '@packages/execute';
 
-runForever("../lib/entry.js", import.meta.dirname);
+runForever('../lib/entry.js', import.meta.dirname);

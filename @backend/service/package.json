@@ -10,9 +10,10 @@
 		"watch": "mpis-run watch"
 	},
 	"dependencies": {
-		"@backend/config": "workspace:^",
-		"@backend/database": "workspace:^",
-		"@backend/execute": "workspace:^",
+		"@packages/config": "workspace:^",
+		"@packages/database": "workspace:^",
+		"@packages/execute": "workspace:^",
+		"@packages/usersettings": "workspace:^",
 		"@idlebox/args": "^0.0.11",
 		"@idlebox/common": "^1.4.16",
 		"@idlebox/logger": "^0.0.4",

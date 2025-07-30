@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.1.2/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.1.3/schema.json",
 	"vcs": {
 		"enabled": true,
 		"clientKind": "git",
@@ -32,33 +32,52 @@
 		"rules": {
 			"recommended": true,
 			"suspicious": {
+				"recommended": true,
 				"noExplicitAny": "off",
 				"noControlCharactersInRegex": "off",
 			},
 			"style": {
+				"recommended": true,
 				"noParameterAssign": "off",
 				"noNonNullAssertion": "warn",
 				"useShorthandFunctionType": "off",
 				"noUselessElse": "off",
 				"noUnusedTemplateLiteral": "off",
 				"noDefaultExport": "error",
+				"useTemplate": {
+					"fix": "none",
+					"level": "info",
+					"options": {},
+				},
 			},
 			"complexity": {
+				"recommended": true,
 				"noThisInStatic": "off",
 			},
 			"correctness": {
+				"recommended": true,
 				"useImportExtensions": {
 					"fix": "unsafe",
 					"level": "error",
 					"options": {},
 				},
+				"noUnusedFunctionParameters": "off",
+				"noUnusedImports": "off",
+				"noUnusedPrivateClassMembers": "off",
+				"noUnusedLabels": "off",
+				"noUnusedVariables": "off",
 			},
-			"nursery": "info",
+			"nursery": {
+				"recommended": true,
+			},
 			"performance": {
+				"recommended": true,
 				"useTopLevelRegex": "info",
 				"noDelete": "info",
 			},
-			"security": {},
+			"security": {
+				"recommended": true,
+			},
 		},
 	},
 	"javascript": {

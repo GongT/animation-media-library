@@ -15,13 +15,5 @@
 	"[json][json5][jsonc][javascript][typescript][typescriptreact]": {
 		"editor.defaultFormatter": "biomejs.biome",
 	},
-	"inlineSQL.enableDBIntegration": true,
-	"inlineSQL.dbDriver": "mysql",
-	"inlineSQL.dbHost": "/run/sockets/mariadb.sock",
-	// "inlineSQL.dbPort": 5432,
-	"inlineSQL.dbUser": "root",
-	"inlineSQL.dbPassword": "#0624UFO",
-	"cSpell.words": [
-		"bgmtv"
-	],
+	"cSpell.words": ["bgmtv"],
 }

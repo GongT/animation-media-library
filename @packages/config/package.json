@@ -1,0 +1,26 @@
+{
+	"name": "@packages/config",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"exports": {
+		".": "./lib/index.js",
+		"./package.json": "./package.json"
+	},
+	"scripts": {
+		"prepack": "mpis-run build --clean",
+		"build": "mpis-run build",
+		"watch": "mpis-run watch"
+	},
+	"dependencies": {
+		"@idlebox/logger": "^0.0.4",
+		"@idlebox/node": "^1.4.9",
+		"@idlebox/common": "^1.4.16"
+	},
+	"devDependencies": {
+		"@build-script/single-dog-asset": "^1.0.37",
+		"@internal/local-rig": "workspace:",
+		"@types/node": "^24.1.0",
+		"typescript": "^5.8.3"
+	}
+}

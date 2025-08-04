@@ -1,0 +1,124 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.1.3/schema.json",
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true,
+	},
+	"files": {
+		"ignoreUnknown": true,
+	},
+	"assist": {
+		"enabled": true,
+		"actions": {
+			"recommended": true,
+			"source": {
+				"organizeImports": "off",
+				"useSortedKeys": "off",
+				"useSortedProperties": "off",
+				"useSortedAttributes": "on",
+			},
+		},
+	},
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "tab",
+		"formatWithErrors": true,
+		"lineEnding": "lf",
+		"lineWidth": 120,
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"suspicious": {
+				"recommended": true,
+				"noExplicitAny": "off",
+				"noControlCharactersInRegex": "off",
+			},
+			"style": {
+				"recommended": true,
+				"noParameterAssign": "off",
+				"noNonNullAssertion": "warn",
+				"useShorthandFunctionType": "off",
+				"noUselessElse": "off",
+				"noUnusedTemplateLiteral": "off",
+				"noDefaultExport": "error",
+				"useTemplate": {
+					"fix": "none",
+					"level": "info",
+					"options": {},
+				},
+			},
+			"complexity": {
+				"recommended": true,
+				"noThisInStatic": "off",
+			},
+			"correctness": {
+				"recommended": true,
+				"useImportExtensions": {
+					"fix": "unsafe",
+					"level": "error",
+					"options": {},
+				},
+				"noUnusedFunctionParameters": "off",
+				"noUnusedImports": "off",
+				"noUnusedPrivateClassMembers": "off",
+				"noUnusedLabels": "off",
+				"noUnusedVariables": "off",
+			},
+			"nursery": {
+				"recommended": true,
+			},
+			"performance": {
+				"recommended": true,
+				"useTopLevelRegex": "info",
+				"noDelete": "info",
+			},
+			"security": {
+				"recommended": true,
+			},
+		},
+	},
+	"javascript": {
+		"formatter": {
+			"enabled": true,
+			"quoteStyle": "single",
+			"trailingCommas": "es5",
+		},
+		"linter": {
+			"enabled": true,
+		},
+	},
+	"json": {
+		"parser": {
+			"allowTrailingCommas": true,
+			"allowComments": true,
+		},
+		"formatter": {
+			"enabled": true,
+			"trailingCommas": "none",
+		},
+		"linter": {
+			"enabled": true,
+		},
+	},
+	"overrides": [
+		{
+			"includes": ["tsconfig.json", "tsconfig.*.json", ".vscode/*.json", "*.jsonc"],
+			"json": {
+				"formatter": {
+					"trailingCommas": "all",
+				},
+			},
+		},
+	],
+	"css": {
+		"formatter": {
+			"enabled": true,
+		},
+		"linter": {
+			"enabled": true,
+		},
+	},
+}

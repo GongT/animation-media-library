@@ -1,0 +1,26 @@
+name: media-library-development
+
+services:
+  pg:
+    image: docker.io/library/postgres:latest
+    restart: always
+    shm_size: 512mb
+    # ports:
+    #   - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: password
+    volumes:
+      - ./.development/pgdata:/var/lib/postgresql/data
+      - ./.development/sockets:/var/run/postgresql
+  
+  adminer:
+    image: docker.io/library/adminer:latest
+    restart: always
+    depends_on:
+      - pg
+    ports:
+      - 8888:8080
+    volumes:
+      - ./.development/adminer/index.php:/var/www/html/index.php:ro
+    environment:
+      ADMINER_DEFAULT_SERVER: 'pg'

@@ -1,0 +1,29 @@
+{
+	"name": "@internal/scripts",
+	"private": true,
+	"type": "module",
+	"bin": {
+		"pre-publish": "./bins/pre-publish.js"
+	},
+	"scripts": {
+		"prepack": "rimraf lib && mpis-tsc -p src",
+		"build": "mpis-tsc -p src",
+		"watch": "mpis-tsc -p src -w",
+		"postinstall": "package-tools monorepo-link-binaries --recursive --transparent @internal/local-rig"
+	},
+	"dependencies": {
+		"@biomejs/biome": "^2.1.2",
+		"@build-script/package-tools": "^0.0.4",
+		"@idlebox/json-edit": "^0.0.3",
+		"@idlebox/node": "^1.4.9",
+		"execa": "^9.6.0"
+	},
+	"devDependencies": {
+		"@build-script/single-dog-asset": "^1.0.37",
+		"@types/debug": "^4.1.12",
+		"@types/node": "^24.1.0",
+		"esbuild": "^0.25.8",
+		"source-map-support": "^0.5.21",
+		"typescript": "^5.8.3"
+	}
+}

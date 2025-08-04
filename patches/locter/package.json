@@ -1,0 +1,13 @@
+{
+	"name": "@types/locter",
+	"version": "1.0.0",
+	"description": "",
+	"types": "./index.d.ts",
+	"scripts": {
+		"build": "",
+		"watch": ""
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
+}

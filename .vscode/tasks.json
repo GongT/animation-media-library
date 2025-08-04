@@ -2,10 +2,19 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"type": "process",
-			"command": "rush",
-			"args": ["build", "--watch"],
-			"label": "监视修改"
-		}
-	]
+			"label": "检查并修复代码格式",
+			"icon": {
+				"color": "terminal.ansiYellow",
+				"id": "check-all",
+			},
+			"type": "shell",
+			"command": "pnpm -w run pretty --unsafe",
+			"options": {
+				"env": {
+					"NODE_OPTIONS": "--disable-warning DeprecationWarning --disable-warning=ExperimentalWarning",
+				},
+			},
+			"problemMatcher": [],
+		},
+	],
 }

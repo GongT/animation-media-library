@@ -1,0 +1,13 @@
+{
+	"name": "@shared/protocol",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"build": "",
+		"watch": ""
+	},
+	"devDependencies": {
+		"@build-script/single-dog-asset": "^1.0.37",
+		"typescript": "^5.8.3"
+	}
+}

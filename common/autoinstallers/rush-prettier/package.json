@@ -1,8 +1,0 @@
-{
-	"name": "rush-prettier",
-	"version": "1.0.0",
-	"private": true,
-	"dependencies": {
-		"@build-script/rush-pretty": "^0.0.3"
-	}
-}

@@ -1,0 +1,39 @@
+{
+	"name": "bgmtv-api",
+	"version": "0.0.2",
+	"type": "module",
+	"description": "Bangumi OpenAPI Client",
+	"exports": {
+		".": {
+			"source": "./src/index.ts",
+			"default": "./lib/index.js"
+		},
+		"./package.json": "./package.json"
+	},
+	"scripts": {
+		"prepack": "mpis-run build --clean",
+		"build": "mpis-run build",
+		"watch": "mpis-run watch",
+		"prepublishHook": "pre-publish",
+		"prepublishOnly": "echo 应使用 publisher publish ; echo ; false"
+	},
+	"publishConfig": {
+		"packCommand": [
+			"publisher",
+			"pack"
+		]
+	},
+	"devDependencies": {
+		"@build-script/single-dog-asset": "^1.0.37",
+		"@internal/local-rig": "workspace:",
+		"@mpis/publisher": "^0.0.3",
+		"@types/node": "^24.1.0",
+		"execa": "^9.6.0",
+		"openapi-typescript": "^7.8.0",
+		"typescript": "^5.8.3"
+	},
+	"dependencies": {
+		"@idlebox/common": "^1.4.16",
+		"openapi-fetch": "^0.14.0"
+	}
+}

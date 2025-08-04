@@ -1,0 +1,13 @@
+{
+	"extends": "../node_modules/@build-script/single-dog-asset/package/tsconfig.json",
+	"compilerOptions": {
+		"outDir": "../lib",
+		"rootDir": "./",
+		"tsBuildInfoFile": "../lib/tsbuildinfo.json",
+		"types": ["node"],
+		"typeRoots": ["../node_modules/@types", "../node_modules"],
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true
+	},
+	"exclude": ["**/*.generator.ts"]
+}

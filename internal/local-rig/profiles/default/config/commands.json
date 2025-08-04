@@ -1,0 +1,32 @@
+{
+	"$schema": "../node_modules/@mpis/run/commands.schema.json",
+	"build": [],
+	"commands": {
+		"autoindex": {
+			"command": ["autoindex", "--config"]
+		},
+
+		/**
+		 *
+		 */
+		"codegen": {
+			"command": ["codegen", "src"]
+		},
+
+		/**
+		 *
+		 */
+		"typescript": {
+			"title": "Compile TypeScript",
+			"command": {
+				"package": "@mpis/typescript",
+				"binary": "mpis-tsc",
+				"arguments": ["-p", "src"]
+			},
+			"watch": ["-w"],
+			"cwd": ".",
+			"env": {}
+		}
+	},
+	"clean": ["lib"]
+}

@@ -16,8 +16,8 @@
 			"program": "${workspaceFolder}/@backend/main/loader.js",
 			"sourceMaps": true,
 			"env": {
-				"workspaceFolder": "${workspaceFolder}"
-			}
-		}
-	]
+				"workspaceFolder": "${workspaceFolder}",
+			},
+		},
+	],
 }

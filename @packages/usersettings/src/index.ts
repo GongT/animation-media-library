@@ -6,7 +6,9 @@ import type { UserSettings, ValidKeys } from './type.js';
 
 const handlers: Handlers = {
 	bangumiUserToken: storeString(''),
-	bangumiLastUserId: storeInt(-1),
+	lastUserToken: storeString(''),
+	bangumiUserId: storeInt(-1),
+	lastSyncTimestamp: storeInt(0),
 };
 
 function isValidKey(key: string): key is ValidKeys {

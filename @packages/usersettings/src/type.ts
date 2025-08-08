@@ -1,6 +1,8 @@
 export interface UserSettings {
 	bangumiUserToken: string;
-	bangumiLastUserId: number;
+	lastUserToken: string;
+	lastSyncTimestamp: number;
+	bangumiUserId: number;
 }
 
 export type ValidKeys = keyof UserSettings;

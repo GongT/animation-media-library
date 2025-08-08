@@ -12,6 +12,6 @@
 		"libpq": "npm:libpq@latest"
 	},
 	"devDependencies": {
-		"@idlebox/node": "^1.4.9"
+		"@idlebox/node": "^1.4.12"
 	}
 }

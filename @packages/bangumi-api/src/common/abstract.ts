@@ -1,4 +1,4 @@
-import { type IDisposable, toDisposable } from '@idlebox/common';
+import { toDisposable, type IDisposable } from '@idlebox/common';
 import createClient, { type Client } from 'openapi-fetch';
 import type { MiddlewareOnError, MiddlewareOnRequest, MiddlewareOnResponse } from 'openapi-fetch/src/index.js';
 import type { paths } from '../g/openapi.generated.js';
@@ -28,8 +28,10 @@ export interface Options {
 	fetch?: typeof globalThis.fetch;
 }
 
+type TypedClient = Client<paths, 'application/json'>;
+
 export abstract class AbstractClient {
-	protected readonly client: Client<paths, 'application/json'>;
+	protected readonly client: TypedClient;
 	protected readonly headers: Record<string, string>;
 
 	constructor(protected readonly options: Options) {
@@ -44,7 +46,7 @@ export abstract class AbstractClient {
 		});
 	}
 
-	requireAccessToken() {
+	protected requireAccessToken() {
 		if (!this.options.accessToken) {
 			throw new AuthError('Access token is required for this operation.');
 		}
@@ -72,22 +74,33 @@ export abstract class AbstractClient {
 		});
 	}
 
-	get _request() {
+	/** @deprecated 尽量不要用底层请求 */
+	get _request(): TypedClient['request'] {
 		return this.client.request.bind(this.client);
 	}
-	get _get() {
+	
+	/** @deprecated 尽量不要用底层请求 */
+	get _get(): TypedClient['GET'] {
 		return this.client.GET.bind(this.client);
 	}
-	get _post() {
+	
+	/** @deprecated 尽量不要用底层请求 */
+	get _post(): TypedClient['POST'] {
 		return this.client.POST.bind(this.client);
 	}
-	get _put() {
+	
+	/** @deprecated 尽量不要用底层请求 */
+	get _put(): TypedClient['PUT'] {
 		return this.client.PUT.bind(this.client);
 	}
-	get _patch() {
+	
+	/** @deprecated 尽量不要用底层请求 */
+	get _patch(): TypedClient['PATCH'] {
 		return this.client.PATCH.bind(this.client);
 	}
-	get _delete() {
+	
+	/** @deprecated 尽量不要用底层请求 */
+	get _delete(): TypedClient['DELETE'] {
 		return this.client.DELETE.bind(this.client);
 	}
 }

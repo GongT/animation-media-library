@@ -10,19 +10,19 @@
 		"watch": "mpis-run watch"
 	},
 	"dependencies": {
-		"@idlebox/args": "^0.0.11",
-		"@idlebox/common": "^1.4.16",
-		"@idlebox/logger": "^0.0.4",
-		"@idlebox/node": "^1.4.9",
+		"@idlebox/args": "^0.0.14",
+		"@idlebox/common": "^1.4.19",
+		"@idlebox/logger": "^0.0.7",
+		"@idlebox/node": "^1.4.12",
 		"source-map-support": "^0.5.21"
 	},
 	"devDependencies": {
-		"@build-script/single-dog-asset": "^1.0.37",
+		"@build-script/single-dog-asset": "^1.0.39",
 		"@internal/local-rig": "workspace:",
 		"@internal/scripts": "workspace:",
-		"@mpis/run": "^0.0.4",
-		"@types/node": "^24.1.0",
+		"@mpis/run": "^0.0.7",
+		"@types/node": "^24.2.0",
 		"@types/source-map-support": "^0.5.10",
-		"typescript": "^5.8.3"
+		"typescript": "^5.9.2"
 	}
 }

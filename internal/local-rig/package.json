@@ -7,13 +7,14 @@
 		"watch": ""
 	},
 	"dependencies": {
-		"@build-script/single-dog-asset": "^1.0.37",
-		"@mpis/monorepo": "^0.0.3",
-		"@mpis/run": "link:/data/DevelopmentRoot/github.com/gongt/baobao/@mpis/run",
-		"@mpis/typescript": "^0.0.6",
-		"typescript": "^5.8.3"
+		"@build-script/autoindex": "^0.0.7",
+		"@build-script/single-dog-asset": "^1.0.39",
+		"@mpis/monorepo": "^0.0.6",
+		"@mpis/run": "^0.0.7",
+		"@mpis/typescript": "^0.0.9",
+		"typescript": "^5.9.2"
 	},
 	"devDependencies": {
-		"@build-script/codegen": "^1.0.4"
+		"@build-script/codegen": "^1.0.7"
 	}
 }

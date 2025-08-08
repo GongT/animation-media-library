@@ -13,14 +13,14 @@
 		"watch": "mpis-run watch"
 	},
 	"dependencies": {
-		"@idlebox/common": "^1.4.16",
-		"@idlebox/logger": "^0.0.4",
-		"@packages/database": "workspace:^"
+		"@idlebox/common": "^1.4.19",
+		"@idlebox/logger": "^0.0.7",
+		"@packages/database": "workspace:"
 	},
 	"devDependencies": {
-		"@build-script/single-dog-asset": "^1.0.37",
+		"@build-script/single-dog-asset": "^1.0.39",
 		"@internal/local-rig": "workspace:",
-		"@types/node": "^24.1.0",
-		"typescript": "^5.8.3"
+		"@types/node": "^24.2.0",
+		"typescript": "^5.9.2"
 	}
 }

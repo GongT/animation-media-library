@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { BaseEntity, Column, PrimaryGeneratedColumn } from 'typeorm';
-import { inspect, InspectOptionsStylized } from 'util';
+import { inspect, type InspectOptionsStylized } from 'node:util';
 
 export abstract class CommonEntity extends BaseEntity {
 	@PrimaryGeneratedColumn({ type: 'bigint' })

@@ -1,14 +1,17 @@
 {
+	"version": "0.0.1",
 	"scripts": {
 		"watch": "build-manager watch",
 		"build": "build-manager build",
 		"pretty": "node internal/scripts/bins/load.js pretty --fix --diagnostic-level=warn",
 		"start:daemon": "node @backend/service/bin/daemon.js",
 		"start:api": "node @backend/api/bin/api.js",
-		"cli": "node @frontend/cli/bin/cli.js"
+		"cli": "node @frontend/cli/bin/cli.js",
+		"postinstall": "package-tools monorepo-link-binaries --recursive --transparent @internal/local-rig"
 	},
 	"dependencies": {
-		"@biomejs/biome": "^2.1.2",
-		"typescript": "^5.8.3"
+		"@build-script/package-tools": "^0.0.7",
+		"@biomejs/biome": "^2.1.4",
+		"typescript": "^5.9.2"
 	}
 }

@@ -1,3 +1,5 @@
 declare interface ImportMeta {
-	APP_ROOT_DIR: string;
+	app_root_dir?: string;
+	app_version?: string;
+	git_hash?: string;
 }

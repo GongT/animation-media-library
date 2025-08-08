@@ -7,7 +7,7 @@
 		"watch": ""
 	},
 	"devDependencies": {
-		"@build-script/single-dog-asset": "^1.0.37",
-		"typescript": "^5.8.3"
+		"@build-script/single-dog-asset": "^1.0.39",
+		"typescript": "^5.9.2"
 	}
 }

@@ -18,22 +18,19 @@
 		"prepublishOnly": "echo 应使用 publisher publish ; echo ; false"
 	},
 	"publishConfig": {
-		"packCommand": [
-			"publisher",
-			"pack"
-		]
+		"packCommand": ["publisher", "pack"]
 	},
 	"devDependencies": {
-		"@build-script/single-dog-asset": "^1.0.37",
+		"@build-script/single-dog-asset": "^1.0.39",
 		"@internal/local-rig": "workspace:",
-		"@mpis/publisher": "^0.0.3",
-		"@types/node": "^24.1.0",
+		"@mpis/publisher": "^0.0.6",
+		"@types/node": "^24.2.0",
 		"execa": "^9.6.0",
 		"openapi-typescript": "^7.8.0",
-		"typescript": "^5.8.3"
+		"typescript": "^5.9.2"
 	},
 	"dependencies": {
-		"@idlebox/common": "^1.4.16",
+		"@idlebox/common": "^1.4.19",
 		"openapi-fetch": "^0.14.0"
 	}
 }

@@ -1,0 +1,4 @@
+{
+	"project": "./src",
+	"output": "index.generated"
+}

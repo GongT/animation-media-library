@@ -16,4 +16,11 @@
 		"editor.defaultFormatter": "biomejs.biome",
 	},
 	"cSpell.words": ["bgmtv"],
+	"remote.portsAttributes": {
+		"8888": {
+			"label": "adminer",
+			"protocol": "http",
+			"onAutoForward": "silent",
+		},
+	}
 }

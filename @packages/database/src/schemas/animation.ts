@@ -1,14 +1,6 @@
 import { Column, Entity, Index } from 'typeorm';
+import { WatchState } from '../common/enums.js';
 import { CommonEntity } from '../common/schema.js';
-
-export enum WatchState {
-	NotCollect = '未收藏',
-	Watch = '在看',
-	Wish = '想看',
-	Complete = '看过',
-	Hold = '搁置',
-	Drop = '抛弃',
-}
 
 @Entity({ comment: '动画', name: 'animations' })
 export class AnimationEntity extends CommonEntity {
@@ -25,8 +17,8 @@ export class AnimationEntity extends CommonEntity {
 	@Column({ type: 'date' })
 	declare onAirFrom: Date;
 
-	@Column({ type: 'date' })
-	declare onAirTo: Date;
+	@Column({ type: 'date', nullable: true })
+	onAirTo?: Date;
 
 	@Column({ type: 'enum', enum: WatchState })
 	declare watchState: WatchState;
